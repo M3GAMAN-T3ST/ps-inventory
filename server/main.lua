@@ -550,6 +550,7 @@ local function SaveStashItems(stashId, items)
 	})
 
 	Stashes[stashId].isOpen = false
+	TriggerEvent('keep-harmony:stash->close', stashId) -- keep-bags
 end
 
 local function AddToStash(stashId, slot, otherslot, itemName, amount, info, created)
@@ -2708,4 +2709,10 @@ RegisterNetEvent('inventory:server:addTrunkItems', function()
 end)
 RegisterNetEvent('inventory:server:addGloveboxItems', function()
 	print('inventory:server:addGloveboxItems has been deprecated please use exports[\'ps-inventory\']:addGloveboxItems(plate, items)')
+end)
+
+exports('GetInventoryData', function(type, id) -- keep-bags
+	if type == 'stash' then
+		return Stashes[id]
+	end
 end)
