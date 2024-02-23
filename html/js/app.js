@@ -656,6 +656,9 @@ function FormatItemInfo(itemData, dom) {
                 gender +
                 "</span></p>"
             );
+        } else if (itemData.name == "keys") { // renzu_motels
+            $(".item-info-title").html('<p>' + itemData.label  + '</p>');
+            $(".item-info-description").html('<p>Info' + itemData.info.description )
         } else if (itemData.name == "stickynote") {
             $(".item-info-title").html('<p>' + itemData.label + '</p>')
             $(".item-info-description").html('<p>' + itemData.info.label + '</p>');
