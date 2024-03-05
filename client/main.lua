@@ -1082,7 +1082,6 @@ end)
     
     local toolBoxModels = {
         `prop_toolchest_05`,
-        `prop_tool_bench02_ld`,
         `prop_tool_bench02`,
         `prop_toolchest_02`,
         `prop_toolchest_03`,
